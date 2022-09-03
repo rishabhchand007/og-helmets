@@ -1,0 +1,33 @@
+[
+    {
+        "id":"1",
+        "image":"1.jpg",
+        "name": "PREDATOR MATT BLACK",
+        "price":"30,000"
+    },
+    {
+        "id":"2",
+        "image":"2.jpg",
+        "name": "DUKE II CREAM",
+        "price":"40,000"
+    },
+    {
+        "id":"3",
+        "image":"3.jpg",
+        "name": "BLADE MATT BLACK",
+        "price":"60,000"
+    },
+    {
+        "id":"4",
+        "image":"4.jpg",
+        "name": "RAGE PREMIUM MATT BLACK ORANGE",
+        "price":"79,999"
+    },
+    {
+        "id":"5",
+        "image":"5.jpg",
+        "name": "RAGE PREMIUM MATT BLACK SILVER",
+        "price":"44,999"
+    }
+
+]
