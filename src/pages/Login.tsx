@@ -1,9 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Users from "../Json/Users.json";
 import { useNavigate } from "react-router-dom";
+import { OgContext } from "../contexts/OgContext";
 const Login = () => {
+  const {auth,setAuth} = useContext(OgContext)
   let navigate = useNavigate();
   const [creds, setCreds] = useState({user:"", password:""})
   
@@ -13,12 +15,12 @@ const Login = () => {
   //handling login click
   const loginClick = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault()
-    Users.map((user)=>{
+    Users.map(async(user)=>{
       if(user.name===creds.user){
         if(user.password===creds.password){
-          navigate("/")
-          return true
-          
+          await setAuth(true);
+          console.log(auth)
+          return navigate("/")
         }
         else{
           console.log("error")
