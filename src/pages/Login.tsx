@@ -18,9 +18,10 @@ const Login = () => {
     Users.map(async(user)=>{
       if(user.name===creds.user){
         if(user.password===creds.password){
-          await setAuth(true);
+          await setAuth(user.name);
           console.log(auth)
-          return navigate("/")
+          sessionStorage.setItem('auth',user.name)
+          return navigate(`/${user.name}`)
         }
         else{
           console.log("error")

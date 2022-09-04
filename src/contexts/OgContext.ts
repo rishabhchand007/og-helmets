@@ -1,3 +1,3 @@
 import { createContext } from "react";
-export const OgContext = createContext<{auth?:boolean,setAuth?: any}>({});
+export const OgContext = createContext<{auth?:string|null ,setAuth?: any}>({});
 

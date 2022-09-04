@@ -30,3 +30,7 @@
   border: 1px solid #c9c9c9;
   padding: 2rem;
   border-radius: 10px; }
+
+.pm-text {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif; }
