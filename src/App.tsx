@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import {OgContext} from "./contexts/OgContext"
 import User from './pages/User';
+import Product from './pages/Product';
 function App() {
   
   const [auth,setAuth]= useState(null)
@@ -17,9 +18,12 @@ function App() {
       <Routes>
         
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/products" element={<Product />} />
+
+        <Route path="/login" element={<Login />} />
         <Route path="/:slug" element={<User />} />
       </Routes>
+      
     </BrowserRouter>
     </OgContext.Provider>
     

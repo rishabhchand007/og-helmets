@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Products from "../Json/Products.json";
 import { useParams } from "react-router-dom";
-
+import  PieChart  from '../components/PieChart';
 const User = () => {
     let {slug} = useParams()
   let navigate = useNavigate();
@@ -20,7 +20,9 @@ const User = () => {
             Welcome Back <span style={{ color: "#ee5253" }}>{slug}</span>
           </h3>
         </div>
-        <div className="row">
+
+    <PieChart />
+        <div className="row mt-5">
          <div><h4>Product Manager <button className="btn btn-success" style={{float:"right"}} disabled={slug==="editor"?true:false}>Add Product</button></h4></div> 
         </div>
         {Products.map((item) => {
