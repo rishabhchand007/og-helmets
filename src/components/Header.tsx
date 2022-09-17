@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,7 +13,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "../Theme";
 import SportsMotorsportsSharpIcon from "@mui/icons-material/SportsMotorsportsSharp";
@@ -54,7 +53,13 @@ const Header = () => {
       <AppBar position="sticky">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <SportsMotorsportsSharpIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1, fontSize:"3rem" }} />
+            <SportsMotorsportsSharpIcon
+              sx={{
+                display: { xs: "none", md: "flex" },
+                mr: 1,
+                fontSize: "3rem",
+              }}
+            />
             <Typography
               variant="h6"
               noWrap
@@ -66,7 +71,9 @@ const Header = () => {
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                cursor:"pointer"
               }}
+              onClick={()=>{navigate("/")}}
             >
               OG HELMETS
             </Typography>
@@ -107,7 +114,9 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <SportsMotorsportsSharpIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <SportsMotorsportsSharpIcon
+              sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+            />
             <Typography
               variant="h5"
               noWrap
@@ -121,6 +130,7 @@ const Header = () => {
                 color: "inherit",
                 textDecoration: "none",
               }}
+              onClick={()=>{navigate("/")}}
             >
               OG HELMETS
             </Typography>
@@ -128,14 +138,22 @@ const Header = () => {
               {pages.map((page) => (
                 <Button
                   key={page}
-                  onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  onClick={()=>{navigate(`/${page}`)}}
                 >
                   {page}
+                  
                 </Button>
               ))}
             </Box>
 
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+             
+                <Typography sx={{ color: "white", fontSize:'0.9rem'}} onClick={()=>{navigate("/login")}}>
+                  Login
+                </Typography>
+         
+            </Button>
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
